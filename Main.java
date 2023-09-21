@@ -1,17 +1,26 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import javax.swing.*;
+import java.awt.*;
+
 public class Main {
-    public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+    public static void main(String[] args)
+    {
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+    JFrame frame = new JFrame(); // creating instance of JFrame
+    JButton button = new JButton(" Click");
+        String name = JOptionPane.showInputDialog("What is your name? ");
+        UIManager.put("OptionPane.minimumSize",new Dimension(500,500));
+        JOptionPane.showMessageDialog(null,"Hello: " + name);
+        //question.setBounds(100, 100, 100, 100);
+        button.setBounds(500, 200, 220, 50); // x axis, y-axis, width, height
+        frame.add(button); // adding button in JFrame
+        frame.setSize(1000, 1000); // 400 width and 500 height
+        frame.setLayout(null); // using no layout managers
+        frame.setVisible(true); // making the frame visible
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
     }
 }
+
+
+
+
+
