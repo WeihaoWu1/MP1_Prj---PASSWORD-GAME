@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class SpecialCharacter {
     private String character;
 
-    public String userInput()
+    public String characterUserInput()
     {
         System.out.println("Enter a special character: ");
         Scanner s = new Scanner(System.in);

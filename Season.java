@@ -1,7 +1,7 @@
 import java.util.Arrays;
 public class Season {
 
-    public  seasonList() {
+    public static String[] seasonList() {
         String arr[] = {"winter", "fall", "summer", "spring"};
         return arr;
     }
