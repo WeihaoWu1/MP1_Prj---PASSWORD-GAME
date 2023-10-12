@@ -13,9 +13,9 @@ public class Main {
         Scanner s = new Scanner(System.in);
         System.out.println("Please choose a password.");
         String password = s.nextLine();
-        Thirty b = new Thirty(password);
+        Thirty b = new Thirty(password, true);
         b.check();
-
+        System.out.println(b.t());
 
 //        game_end = false;
 //        while (game_end != true){
