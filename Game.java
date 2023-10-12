@@ -11,6 +11,9 @@ public class Game
     private final String[] seasons = {"winter", "summer", "fall", "autumn", "spring"};
     private final String[] upperCaseLetters = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M","N","O", "P","Q","R","S","T","U","V","W", "X","Y", "Z"};
 
+    private final String[] ClassmateName = {"victor ", "fatoumata ", "reem ", "shunyi ", "hamzah ", "samuel ", "justin", "evan", "teo ", "yuxuan ", "eric ", "matthew ", "zachary ", "donovan ", "daler ", "isabella ", "syon ", "saajid ", "yasmin ", "nelson", "jonathan ", "eaton ", "terry ", "preston", "toshinori ", "raymond ", "weihao ", "linbin", "sumya "};
+
+
     public Game(String pass){
         password = pass;
 

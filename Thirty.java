@@ -7,18 +7,18 @@ public class Thirty
         password = p;
         sums = s;
     }
-    public boolean t()
-    {
-        if(sums == true)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-    public void check()
+//    public boolean t()
+//    {
+//        if(sums == true)
+//        {
+//            return true;
+//        }
+//        else
+//        {
+//            return false;
+//        }
+//    }
+    public boolean check()
     {
         int sum = 0;
         for(int i = 0; i<1;i++)
