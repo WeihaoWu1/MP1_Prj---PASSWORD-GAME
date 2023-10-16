@@ -155,6 +155,6 @@ public class Thirty
         {
             sums = false;
         }
-
+        return false;
     }
 }

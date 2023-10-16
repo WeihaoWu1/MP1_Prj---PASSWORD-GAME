@@ -5,7 +5,7 @@ import java.util.List;
 public class Game {
     private String password;
     private Integer sums;
-    private String introduction = "Welcome to the Password Game!";
+    private final String introduction = "Welcome to the Password Game!";
     private int attempts;
     private final String[] months = {"january", "february", "march", "april", "may", "june",
             "july", "august", "september", "october", "november", "december"};
@@ -26,6 +26,14 @@ public class Game {
     public Game(String pass, int attemptNumber) {
         this.password = pass;
         this.attempts = attemptNumber;
+    }
+
+    public Game(){
+        System.out.println("Game is overloaded");
+    }
+
+    public void updatePassword(String newPassword){
+        password = newPassword;
     }
 
     // ACCESSOR METHODS
@@ -82,8 +90,8 @@ public class Game {
     }
 
     public boolean classmateName() { // INCLUDES CLASSMATES NAME REQUIREMENT
-        for (int i = 0; i < classmateNames.length; i++) {
-            if (password.contains(classmateNames[i])) {
+        for (int i = 0; i < ClassmateName.length; i++) {
+            if (password.contains(ClassmateName[i])) {
                 return true;
             }
         }
