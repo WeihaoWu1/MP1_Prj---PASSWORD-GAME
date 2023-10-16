@@ -33,7 +33,9 @@ public class Game {
     public String getPassword(){
         return password;
     }
-
+    public String toString(){
+        return "Welcome to the Password Game!";
+    }
     public String getIntroduction(){
         return introduction;
     }
@@ -51,6 +53,11 @@ public class Game {
         int formula = (int)(percentage * Integer.MAX_VALUE * attempts + .5);
         return Double.parseDouble((("Your Score is: " + (formula) + "and it took you " + attempts + "tries!")));
     }
+
+    public void getScore(int numAttempts){
+        System.out.println(Game.calculateScore(numAttempts));
+    }
+
 
     // REQUIREMENT METHODS
 
@@ -133,7 +140,7 @@ public class Game {
                     if ((numList.contains(password.charAt(i + 2)))) {
                         return true;
                     }
-                    if (password.charAt(i - 1) == '.') {
+                    if (password.charAt(i--) == '.') {
                         return true;
                     }
                 }
