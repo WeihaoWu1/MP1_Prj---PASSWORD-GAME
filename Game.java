@@ -156,7 +156,20 @@ public class Game {
         }
         return false;
     }
-
+    public boolean productFifty(){
+        int product = 1;
+        if(password.contains("0")){
+            return false;
+        }
+        for (int i=0;i<password.length(); i++){
+            for (int n = 0; n < numbers.length; n++) {
+                if (password.substring(i, i+=1).equals(numbers[n])) {
+                    product *= n+1;
+                }
+            }
+        }
+        return true;
+    }
     public boolean sumThirty() {        //SUM OF THIRTY REQUIREMENT
         int sum = 0;
         for (int i = 0; i < password.length(); i++) {

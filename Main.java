@@ -33,9 +33,39 @@ public class Main {
             Button enterButton = new Button("Enter");
             enterButton.setBounds(200, 400, 100, 100);
             enterButton.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e){
-                    requirementsMet.setText(requirement1 + requirement2 + requirement3 + requirement4 +
-                            requirement5 +  requirement6 + requirement7 + requirement8 + requirement9 + requirement10);
+                public void actionPerformed(ActionEvent e) {
+
+                    TextField requirements1 = new TextField();
+                    TextField requirements2 = new TextField();
+                    TextField requirements3 = new TextField();
+                    TextField requirements4 = new TextField();
+                    TextField requirements5 = new TextField();
+                    TextField requirements6 = new TextField();
+                    TextField requirements7 = new TextField();
+                    TextField requirements8 = new TextField();
+                    TextField requirements9 = new TextField();
+                    TextField requirements10 = new TextField();
+                    requirements1.setBounds(50, 200, 1000, 15);
+                    requirements2.setBounds(50, 220, 1000, 15);
+                    requirements3.setBounds(50, 240, 1000, 15);
+                    requirements4.setBounds(50, 260, 1000, 15);
+                    requirements5.setBounds(50, 280, 1000, 15);
+                    requirements6.setBounds(50, 300, 1000, 15);
+                    requirements7.setBounds(50, 320, 1000, 15);
+                    requirements8.setBounds(50, 340, 1000, 15);
+                    requirements9.setBounds(50, 360, 1000, 15);
+                    requirements10.setBounds(50, 380, 1000, 15);
+                    requirements1.setText(String.valueOf(firstAttempt.adzrequirement()));
+                    requirements2.setText(String.valueOf(firstAttempt.specialCharacter()));
+                    requirements3.setText(String.valueOf(firstAttempt.classmateName()));
+                    requirements4.setText(String.valueOf(firstAttempt.capitalLetter()));
+                    requirements5.setText(String.valueOf(firstAttempt.season()));
+                    requirements6.setText(String.valueOf(firstAttempt.month()));
+                    requirements7.setText(String.valueOf(firstAttempt.romanNumerals()));
+                    requirements8.setText(String.valueOf(firstAttempt.randNumber()));
+                    requirements9.setText(String.valueOf(firstAttempt.decimal()));
+                    requirements10.setText(String.valueOf(firstAttempt.sumThirty()));
+
                 }
             });
             // Update
