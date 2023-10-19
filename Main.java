@@ -9,7 +9,7 @@ public class Main {
 
             // Frame
             Frame mainFrame = new Frame("The Password Game");
-            // TextField
+            // Label
             TextField initialPassword = new TextField();
             String firstPassword = initialPassword.getText();
             initialPassword.setBounds(50, 100, 200, 30);
@@ -27,24 +27,39 @@ public class Main {
             String requirement8 = String.valueOf(firstAttempt.randNumber());
             String requirement9 = String.valueOf(firstAttempt.decimal());
             String requirement10 = String.valueOf(firstAttempt.sumThirty());
+            Label requirements1 = new Label();
+            Label requirements2 = new Label();
+            Label requirements3 = new Label();
+            Label requirements4 = new Label();
+            Label requirements5 = new Label();
+            Label requirements6 = new Label();
+            Label requirements7 = new Label();
+            Label requirements8 = new Label();
+            Label requirements9 = new Label();
+            Label requirements10 = new Label();
             Label requirementsMet = new Label();
             requirementsMet.setBounds(50, 200, 1000, 15);
             // Button
             Button enterButton = new Button("Enter");
             enterButton.setBounds(200, 400, 100, 100);
+            initialPassword.addKeyListener(new KeyListener() {
+                @Override
+                public void keyTyped(KeyEvent e) {
+                    firstAttempt.updatePassword(firstPassword);
+                }
+
+                @Override
+                public void keyPressed(KeyEvent e) {
+                    firstAttempt.updatePassword(firstPassword);
+                }
+
+                @Override
+                public void keyReleased(KeyEvent e) {
+                    firstAttempt.updatePassword(firstPassword);
+                }
+            });
             enterButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
-
-                    TextField requirements1 = new TextField();
-                    TextField requirements2 = new TextField();
-                    TextField requirements3 = new TextField();
-                    TextField requirements4 = new TextField();
-                    TextField requirements5 = new TextField();
-                    TextField requirements6 = new TextField();
-                    TextField requirements7 = new TextField();
-                    TextField requirements8 = new TextField();
-                    TextField requirements9 = new TextField();
-                    TextField requirements10 = new TextField();
                     requirements1.setBounds(50, 200, 1000, 15);
                     requirements2.setBounds(50, 220, 1000, 15);
                     requirements3.setBounds(50, 240, 1000, 15);
@@ -69,11 +84,20 @@ public class Main {
                 }
             });
             // Update
-            firstAttempt.updatePassword(firstPassword);
             // Add + Action
 //            mainFrame.setLayout(null);
             mainFrame.add(enterButton);
             mainFrame.add(initialPassword);
+            mainFrame.add(requirements1);
+            mainFrame.add(requirements2);
+            mainFrame.add(requirements3);
+            mainFrame.add(requirements4);
+            mainFrame.add(requirements5);
+            mainFrame.add(requirements6);
+            mainFrame.add(requirements7);
+            mainFrame.add(requirements8);
+            mainFrame.add(requirements9);
+            mainFrame.add(requirements10);
             mainFrame.add(requirementsMet);
             mainFrame.add(titleLabel);
             mainFrame.setSize(1000, 1000);
@@ -103,7 +127,7 @@ public class Main {
         System.out.println(word);
     }
 
-    }
+}
 //import java.awt.*;
 //import java.awt.event.WindowEvent;
 //import java.awt.event.WindowAdapter;
