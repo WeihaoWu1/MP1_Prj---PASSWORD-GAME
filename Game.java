@@ -1,4 +1,4 @@
-import java.security.KeyStore;
+//import java.security.KeyStore;
 import java.util.*;
 import java.util.List;
 
@@ -16,9 +16,13 @@ public class Game {
     private final String[] upperCaseLetters = {"A", "B", "C", "D", "E", "F", "G", "H", "I",
             "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
 
-    private final String[] ClassmateName = {"victor ", "fatoumata ", "reem ", "shunyi ", "hamzah ", "samuel ", "justin", "evan", "teo ", "yuxuan ", "eric ", "matthew ", "zachary ", "donovan ", "daler ", "isabella ", "syon ", "saajid ", "yasmin ", "nelson", "jonathan ", "eaton ", "terry ", "preston", "toshinori ", "raymond ", "weihao ", "linbin", "sumya "};
+    private final String[] ClassmateName = {"victor", "fatoumata", "reem", "shunyi", "hamzah",
+            "samuel", "justin", "evan", "teo ", "yuxuan", "eric", "matthew", "zachary", "donovan",
+            "daler", "isabella", "syon", "saajid", "yasmin", "nelson", "jonathan", "eaton", "terry",
+            "preston", "toshinori", "raymond", "weihao", "linbin", "sumya"};
 
     private final String[] numbers = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
+    private int displayNum;
     List<String> numList = Arrays.asList(numbers);
 
     // GAME METHOD
@@ -47,6 +51,7 @@ public class Game {
     public String getIntroduction(){
         return introduction;
     }
+    public Integer getDisplayNum() {return displayNum;}
 
     public int getSums(){
         return sums;
@@ -134,6 +139,7 @@ public class Game {
 
     public boolean randNumber() { // RANDOM REQUIREMENT
         int rand1 = (int) (Math.random() * (9 - 1 + 1) + 1);
+        displayNum = rand1;
         String rand2 = String.format("%d", rand1);
         if (password.contains(rand2)) {
             return true;
@@ -148,7 +154,7 @@ public class Game {
                     if ((numList.contains(password.charAt(i + 2)))) {
                         return true;
                     }
-                    if (password.charAt(i--) == '.') {
+                    else if (password.charAt(i--) == '.') {
                         return true;
                     }
                 }
