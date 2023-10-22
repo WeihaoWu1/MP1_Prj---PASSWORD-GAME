@@ -180,12 +180,19 @@ public class Game {
         }
         for (int i = 0; i < password.length(); i++) {
             for (int n = 0; n < numbers.length; n++) {
-                if (password.substring(i, i+=1).equals(numbers[n])) {
-                    product *= n+1;
+                int z = i;
+                if (!(i == password.length() - 1)) {
+                    z = i + 1;
+                }
+                if (password.substring(i, z).equals(numbers[n])) {
+                    product *= n + 1;
                 }
             }
         }
-        return true;
+        if (product >= 50) {
+            return true;
+        }
+        return false;
     }
 
     public boolean sumThirty() {        //SUM OF THIRTY REQUIREMENT

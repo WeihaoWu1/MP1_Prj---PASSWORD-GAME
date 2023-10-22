@@ -160,7 +160,8 @@ public class AWT {
         mainFrame.add(requirements8);
         mainFrame.add(requirements9);
         mainFrame.add(yourPassword);
-//        mainFrame.add(requirements10);
+        mainFrame.add(requirements10);
+        mainFrame.add(requirements12);
         mainFrame.add(titleLabel);
         mainFrame.setSize(1920, 1080);
         mainFrame.setVisible(true);
