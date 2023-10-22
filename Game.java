@@ -89,6 +89,15 @@ public class Game {
         return false;
     }
 
+    public boolean number() { // SPECIAL CHARACTER REQUIREMENT
+        for (int i = 0; i < numbers.length; i++) {
+            if (password.contains(numbers[i])) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public boolean specialCharacter() { // SPECIAL CHARACTER REQUIREMENT
         for (int i = 0; i < specialCharacters.length; i++) {
             if (password.contains(specialCharacters[i])) {
