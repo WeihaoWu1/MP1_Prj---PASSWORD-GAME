@@ -2,7 +2,8 @@ import java.awt.*;
 import java.awt.event.*;
 public class AWT {
     private final Frame mainFrame = new Frame("The Password Game");
-    private Button enterButton = new Button("Enter");
+    private String enterText = "ENTER";
+    private Button enterButton;
     private Label requirements1 = new Label();
     private Label requirements2 = new Label();
     private Label requirements3 = new Label();
@@ -36,8 +37,10 @@ public class AWT {
         Font myFont2 = new Font("Monospaced", Font.BOLD, 12);
         Font myFont3 = null;
         Font newFont = myFont1.deriveFont(50F);
+//        enterText.(newFont);
+        enterButton = new Button(enterText);
         TextField initialPassword = new TextField();
-        initialPassword.setBounds(50, 100, 200, 50);
+        initialPassword.setBounds(690, 300, 500, 30);
         Game firstAttempt = new Game(updatedText, 0);
         int randomNumber = firstAttempt.getRandomNumber();
         Label titleLabel = new Label(firstAttempt.getIntroduction());
@@ -55,7 +58,6 @@ public class AWT {
         requirements11.setFont(myFont2);
         requirements12.setFont(myFont2);
         System.out.println(firstAttempt);
-        enterButton.setBounds(500, 500, 100, 100);
         enterButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -66,12 +68,12 @@ public class AWT {
                     met1 = firstAttempt.adzrequirement();
                     requirements1.setText("Must Include the Letters a,d,z: " + met1);
                     if (met1) {
-                        met2 = firstAttempt.specialCharacter();
-                        requirements2.setText("Must Include a Special Character: " + met2);
-                        if (met2) {
-                            met11 = firstAttempt.number();
-                            requirements11.setText("Must include a number: " + met11);
-                            if (met11) {
+                        met11 = firstAttempt.number();
+                        requirements11.setText("Must include a number: " + met11);
+                        if (met11) {
+                            met2 = firstAttempt.specialCharacter();
+                            requirements2.setText("Must Include a Special Character: " + met2);
+                            if (met2) {
                                 met3 = firstAttempt.classmateName();
                                 requirements3.setText("Must Include a Classmate's Name: " + met3);
                                 if (met3) {
@@ -87,11 +89,11 @@ public class AWT {
                                                 met7 = firstAttempt.romanNumerals();
                                                 requirements7.setText("Must include the Roman Numerals of 25 at the end: " + met7);
                                                 if (met7) {
-                                                    met12 = firstAttempt.productFifty();
-                                                    requirements12.setText("Must have a product that is more 50 for all numbers: " + met12);
-                                                    if (met12) {
-                                                        met8 = firstAttempt.displayNum(randomNumber);
-                                                        requirements8.setText("Must include this random number " + "(" + randomNumber + "):" + met8);
+                                                    met8 = firstAttempt.displayNum(randomNumber);
+                                                    requirements8.setText("Must include this random number " + "(" + randomNumber + "):" + met8);
+                                                    if (met8) {
+                                                        met12 = firstAttempt.productFifty();
+                                                        requirements12.setText("Must have a product that is more 50 for all numbers: " + met12);
                                                       if (met12) {
                                                           met9 = firstAttempt.decimal();
                                                           requirements9.setText("Must include a decimal value (WIP): " + met9);
@@ -111,44 +113,32 @@ public class AWT {
                             }
                         }
                     }
-                    else {
-                        requirements1.setText("");
-                        requirements2.setText("");
-                        requirements3.setText("");
-                        requirements4.setText("");
-                        requirements5.setText("");
-                        requirements6.setText("");
-                        requirements7.setText("");
-                        requirements8.setText("");
-                        requirements9.setText("");
-                        requirements10.setText("");
-                        requirements11.setText("");
-                        requirements12.setText("");
-                    }
-                }
                 }
             }
-        });
-        // Button
-        requirements1.setBounds(50, 200, 1000, 15);
-        requirements11.setBounds(50, 220, 1000, 15);
-        requirements2.setBounds(50, 240, 1000, 15);
-        requirements3.setBounds(50, 260, 1000, 15);
-        requirements4.setBounds(50, 280, 1000, 15);
-        requirements5.setBounds(50, 300, 1000, 15);
-        requirements6.setBounds(50, 320, 1000, 15);
-        requirements7.setBounds(50, 340, 1000, 15);
-        requirements8.setBounds(50, 360, 1000, 15);
-        requirements9.setBounds(50, 380, 1000, 15);
-        requirements10.setBounds(50, 420, 1000, 15);
-        requirements12.setBounds(50, 400, 1000, 15);
-        titleLabel.setBounds(750, 100, 700, 50);
+        }
+    });
+        // Setting Bounds
+        enterButton.setBounds(540, 700, 800, 200);
+        requirements1.setBounds(700, 400, 1000, 15);
+        requirements11.setBounds(700, 420, 1000, 15);
+        requirements2.setBounds(700, 440, 1000, 15);
+        requirements3.setBounds(700, 460, 1000, 15);
+        requirements4.setBounds(700, 480, 1000, 15);
+        requirements5.setBounds(700, 500, 1000, 15);
+        requirements6.setBounds(700, 520, 1000, 15);
+        requirements7.setBounds(700, 540, 1000, 15);
+        requirements8.setBounds(700, 560, 1000, 15);
+        requirements9.setBounds(700, 580, 1000, 15);
+        requirements10.setBounds(700, 620, 1000, 15);
+        requirements12.setBounds(700, 600, 1000, 15);
+        titleLabel.setBounds(540, 100, 1000, 50);
 
 
         // Update
         // Add + Action
         mainFrame.add(enterButton);
         mainFrame.add(initialPassword);
+        mainFrame.add(titleLabel);
         mainFrame.add(requirements1);
         mainFrame.add(requirements11);
         mainFrame.add(requirements2);
@@ -162,7 +152,6 @@ public class AWT {
         mainFrame.add(yourPassword);
         mainFrame.add(requirements10);
         mainFrame.add(requirements12);
-        mainFrame.add(titleLabel);
         mainFrame.setSize(1920, 1080);
         mainFrame.setVisible(true);
         closingWindow();
