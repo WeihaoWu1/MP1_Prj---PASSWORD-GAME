@@ -1,9 +1,9 @@
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.*;
+
 public class AWT {
     private final Frame mainFrame = new Frame("The Password Game");
-    private String enterText = "ENTER";
-    private Button enterButton;
     private Label requirements1 = new Label();
     private Label requirements2 = new Label();
     private Label requirements3 = new Label();
@@ -37,26 +37,29 @@ public class AWT {
         Font myFont2 = new Font("Monospaced", Font.BOLD, 12);
         Font myFont3 = null;
         Font newFont = myFont1.deriveFont(50F);
-//        enterText.(newFont);
-        enterButton = new Button(enterText);
+        Font enterFont = myFont1.deriveFont(150F);
+        Font requirementsfont = myFont2.deriveFont(20F);
+        ImageIcon chessPuzzle = new ImageIcon();
+        Button enterButton = new Button("ENTER");
+        enterButton.setFont(enterFont);
         TextField initialPassword = new TextField();
         initialPassword.setBounds(690, 300, 500, 30);
         Game firstAttempt = new Game(updatedText, 0);
         int randomNumber = firstAttempt.getRandomNumber();
         Label titleLabel = new Label(firstAttempt.getIntroduction());
         titleLabel.setFont(newFont);
-        requirements1.setFont(myFont2);
-        requirements2.setFont(myFont2);
-        requirements3.setFont(myFont2);
-        requirements4.setFont(myFont2);
-        requirements5.setFont(myFont2);
-        requirements6.setFont(myFont2);
-        requirements7.setFont(myFont2);
-        requirements8.setFont(myFont2);
-        requirements9.setFont(myFont2);
-        requirements10.setFont(myFont2);
-        requirements11.setFont(myFont2);
-        requirements12.setFont(myFont2);
+        requirements1.setFont(requirementsfont);
+        requirements2.setFont(requirementsfont);
+        requirements3.setFont(requirementsfont);
+        requirements4.setFont(requirementsfont);
+        requirements5.setFont(requirementsfont);
+        requirements6.setFont(requirementsfont);
+        requirements7.setFont(requirementsfont);
+        requirements8.setFont(requirementsfont);
+        requirements9.setFont(requirementsfont);
+        requirements10.setFont(requirementsfont);
+        requirements11.setFont(requirementsfont);
+        requirements12.setFont(requirementsfont);
         System.out.println(firstAttempt);
         enterButton.addActionListener(new ActionListener() {
             @Override
