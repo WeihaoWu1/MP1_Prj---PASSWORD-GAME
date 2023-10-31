@@ -4,6 +4,7 @@ import javax.swing.*;
 
 public class AWT {
     private final Frame mainFrame = new Frame("The Password Game");
+    private final Frame victoriousFrame = new Frame("The Password Game");
     private Label requirements1 = new Label();
     private Label requirements2 = new Label();
     private Label requirements3 = new Label();
@@ -97,14 +98,18 @@ public class AWT {
                                                     if (met8) {
                                                         met12 = firstAttempt.productFifty();
                                                         requirements12.setText("Must have a product that is more 50 for all numbers: " + met12);
-                                                      if (met12) {
-                                                          met9 = firstAttempt.decimal();
-                                                          requirements9.setText("Must include a decimal value (WIP): " + met9);
-                                                          if (met9) {
-                                                            met10 = firstAttempt.sumThirty();
-                                                            requirements10.setText("Must have a sum of 30 for all numbers: " + met10);
-                                                            if (met10) {
-                                                                yourPassword.setText(firstAttempt.getPassword());
+                                                        if (met12) {
+                                                            met9 = firstAttempt.decimal();
+                                                            requirements9.setText("Must include a decimal value (WIP): " + met9);
+                                                            if (met9) {
+                                                                met10 = firstAttempt.sumThirty();
+                                                                requirements10.setText("Must have a sum of 30 for all numbers: " + met10);
+                                                                if (met10) {
+                                                                    yourPassword.setText(updatedText);
+                                                                    yourPassword.setFont(myFont1);
+                                                                    mainFrame.setVisible(false);
+                                                                    victoriousFrame.setVisible(true);
+                                                                }
                                                             }
                                                         }
                                                     }
@@ -117,7 +122,6 @@ public class AWT {
                         }
                     }
                 }
-            }
         }
     });
         // Setting Bounds
@@ -131,10 +135,11 @@ public class AWT {
         requirements6.setBounds(700, 520, 1000, 15);
         requirements7.setBounds(700, 540, 1000, 15);
         requirements8.setBounds(700, 560, 1000, 15);
+        requirements12.setBounds(700, 600, 1000, 15);
         requirements9.setBounds(700, 580, 1000, 15);
         requirements10.setBounds(700, 620, 1000, 15);
-        requirements12.setBounds(700, 600, 1000, 15);
         titleLabel.setBounds(540, 100, 1000, 50);
+        yourPassword.setBounds(0, 50, 500, 15);
 
  // Hello
         // Update
@@ -151,18 +156,27 @@ public class AWT {
         mainFrame.add(requirements6);
         mainFrame.add(requirements7);
         mainFrame.add(requirements8);
-        mainFrame.add(requirements9);
-        mainFrame.add(yourPassword);
-        mainFrame.add(requirements10);
         mainFrame.add(requirements12);
+        mainFrame.add(requirements9);
+        mainFrame.add(requirements10);
+        mainFrame.add(yourPassword);
         mainFrame.setSize(1920, 1080);
         mainFrame.setVisible(true);
+        victoriousFrame.setSize(500, 500);
+        victoriousFrame.setVisible(false);
+        victoriousFrame.add(yourPassword);
         closingWindow();
     }
 
     // Window Closing DNC
     public void closingWindow() {
         mainFrame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                System.exit(0);
+            }
+        });
+        victoriousFrame.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
                 System.exit(0);
