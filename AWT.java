@@ -17,6 +17,9 @@ public class AWT {
     private Label requirements10 = new Label();
     private Label requirements11 = new Label();
     private Label requirements12 = new Label();
+    private Label requirements13 = new Label();
+    private ImageIcon chessPuzzle;
+    private JLabel puzzle = new JLabel();
     private Label yourPassword = new Label();
     private boolean met1;
     private boolean met2;
@@ -30,6 +33,7 @@ public class AWT {
     private boolean met10;
     private boolean met11;
     private boolean met12;
+    private boolean met13;
     private String updatedText = "";
 
 
@@ -40,7 +44,8 @@ public class AWT {
         Font newFont = myFont1.deriveFont(50F);
         Font enterFont = myFont1.deriveFont(150F);
         Font requirementsfont = myFont2.deriveFont(20F);
-        ImageIcon chessPuzzle = new ImageIcon();
+//         = new ImageIcon("chess13.png");
+//        JLabel chosenOne = new JLabel(chessPuzzle);
         Button enterButton = new Button("ENTER");
         enterButton.setFont(enterFont);
         TextField initialPassword = new TextField();
@@ -61,6 +66,7 @@ public class AWT {
         requirements10.setFont(requirementsfont);
         requirements11.setFont(requirementsfont);
         requirements12.setFont(requirementsfont);
+        requirements13.setFont(requirementsfont);
         System.out.println(firstAttempt);
         enterButton.addActionListener(new ActionListener() {
             @Override
@@ -100,15 +106,23 @@ public class AWT {
                                                         requirements12.setText("Must have a product that is more 50 for all numbers: " + met12);
                                                         if (met12) {
                                                             met9 = firstAttempt.decimal();
-                                                            requirements9.setText("Must include a decimal value (WIP): " + met9);
+                                                            requirements9.setText("Must include a decimal value: " + met9);
                                                             if (met9) {
                                                                 met10 = firstAttempt.sumThirty();
                                                                 requirements10.setText("Must have a sum of 30 for all numbers: " + met10);
                                                                 if (met10) {
-                                                                    yourPassword.setText(updatedText);
-                                                                    yourPassword.setFont(myFont1);
-                                                                    mainFrame.setVisible(false);
-                                                                    victoriousFrame.setVisible(true);
+                                                                    chessPuzzle = new ImageIcon(firstAttempt.chess());
+                                                                    puzzle.setIcon(chessPuzzle);
+                                                                    met13 = firstAttempt.checkChess();
+                                                                    requirements13.setText("Must Include the best Chess move in " +
+                                                                            "Algebraic Chess Notation: " + met13);
+                                                                    if (met13) {
+                                                                        yourPassword.setText(updatedText);
+                                                                        yourPassword.setFont(myFont1);
+                                                                        mainFrame.setVisible(false);
+                                                                        victoriousFrame.setVisible(true);
+
+                                                                    }
                                                                 }
                                                             }
                                                         }
@@ -125,25 +139,28 @@ public class AWT {
         }
     });
         // Setting Bounds
-        enterButton.setBounds(540, 700, 800, 200);
-        requirements1.setBounds(700, 400, 1000, 15);
-        requirements11.setBounds(700, 420, 1000, 15);
-        requirements2.setBounds(700, 440, 1000, 15);
-        requirements3.setBounds(700, 460, 1000, 15);
-        requirements4.setBounds(700, 480, 1000, 15);
-        requirements5.setBounds(700, 500, 1000, 15);
-        requirements6.setBounds(700, 520, 1000, 15);
-        requirements7.setBounds(700, 540, 1000, 15);
-        requirements8.setBounds(700, 560, 1000, 15);
-        requirements12.setBounds(700, 600, 1000, 15);
-        requirements9.setBounds(700, 580, 1000, 15);
-        requirements10.setBounds(700, 620, 1000, 15);
+        enterButton.setBounds(580, 700, 800, 200);
+        requirements1.setBounds(680, 400, 1000, 15);
+        requirements11.setBounds(680, 420, 1000, 15);
+        requirements2.setBounds(680, 440, 1000, 15);
+        requirements3.setBounds(680, 460, 1000, 15);
+        requirements4.setBounds(680, 480, 1000, 15);
+        requirements5.setBounds(680, 500, 1000, 15);
+        requirements6.setBounds(680, 520, 1000, 15);
+        requirements7.setBounds(680, 540, 1000, 15);
+        requirements8.setBounds(680, 560, 1000, 15);
+        requirements12.setBounds(680, 600, 1000, 15);
+        requirements9.setBounds(680, 580, 1000, 15);
+        requirements10.setBounds(680, 620, 1000, 15);
+        requirements13.setBounds(680, 640, 1000, 15);
+        puzzle.setBounds(20, 300, 637, 669);
         titleLabel.setBounds(540, 100, 1000, 50);
         yourPassword.setBounds(0, 50, 500, 15);
 
  // Hello
         // Update
         // Add + Action
+        mainFrame.setBackground(Color.PINK);
         mainFrame.add(enterButton);
         mainFrame.add(initialPassword);
         mainFrame.add(titleLabel);
@@ -159,6 +176,8 @@ public class AWT {
         mainFrame.add(requirements12);
         mainFrame.add(requirements9);
         mainFrame.add(requirements10);
+        mainFrame.add(puzzle);
+        mainFrame.add(requirements13);
         mainFrame.add(yourPassword);
         mainFrame.setSize(1920, 1080);
         mainFrame.setVisible(true);
