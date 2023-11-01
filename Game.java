@@ -1,8 +1,10 @@
 //import java.security.KeyStore;
 import java.util.*;
 import java.util.List;
+import java.awt.image.BufferedImage.*;
 
 public class Game {
+    private int chessNum;
     private String password;
     private Integer sums;
     private final String introduction = "Welcome to the Password Game!";
@@ -22,10 +24,16 @@ public class Game {
             "preston", "toshinori", "raymond", "weihao", "linbin", "sumya"};
 
     private final String[] numbers = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
+    private final String[] Chess = {"chess5.png", "chess6.png", "chess7.png", "chess8.png", "chess9.png", "chess10.png", "chess11.png", "chess12.png", "chess13.png"};
+    private final String[] chessAnswers = {"Ne2#", "Qg7#", "Ne8#", "Nf1#", "axb5#", "Rh8#", "Bxb5#", "Rc1#", "dxe6#"};
     private int randomNumber;
     List<String> numList = Arrays.asList(numbers);
 
+
     // GAME METHOD
+
+
+
 
     public Game(String pass, int attemptNumber) {
         this.password = pass;
