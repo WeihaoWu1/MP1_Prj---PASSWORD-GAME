@@ -52,6 +52,7 @@ public class AWT {
         initialPassword.setBounds(690, 300, 500, 30);
         Game firstAttempt = new Game(updatedText, 0);
         int randomNumber = firstAttempt.getRandomNumber();
+        int randomPuzzle = (int) (Math.random() * (10));
         Label titleLabel = new Label(firstAttempt.getIntroduction());
         titleLabel.setFont(newFont);
         requirements1.setFont(requirementsfont);
@@ -113,7 +114,7 @@ public class AWT {
                                                                 if (met10) {
                                                                     chessPuzzle = new ImageIcon(firstAttempt.chess());
                                                                     puzzle.setIcon(chessPuzzle);
-                                                                    met13 = firstAttempt.checkChess();
+                                                                    met13 = firstAttempt.checkChess(randomPuzzle);
                                                                     requirements13.setText("Must Include the best Chess move in " +
                                                                             "Algebraic Chess Notation: " + met13);
                                                                     if (met13) {
@@ -139,28 +140,29 @@ public class AWT {
         }
     });
         // Setting Bounds
-        enterButton.setBounds(580, 700, 800, 200);
-        requirements1.setBounds(680, 400, 1000, 15);
-        requirements11.setBounds(680, 420, 1000, 15);
-        requirements2.setBounds(680, 440, 1000, 15);
-        requirements3.setBounds(680, 460, 1000, 15);
-        requirements4.setBounds(680, 480, 1000, 15);
-        requirements5.setBounds(680, 500, 1000, 15);
-        requirements6.setBounds(680, 520, 1000, 15);
-        requirements7.setBounds(680, 540, 1000, 15);
-        requirements8.setBounds(680, 560, 1000, 15);
-        requirements12.setBounds(680, 600, 1000, 15);
-        requirements9.setBounds(680, 580, 1000, 15);
-        requirements10.setBounds(680, 620, 1000, 15);
-        requirements13.setBounds(680, 640, 1000, 15);
-        puzzle.setBounds(20, 300, 637, 669);
+        enterButton.setBounds(565, 700, 800, 200);
+        yourPassword.setBounds(0, 50, 500, 15);
+        requirements1.setBounds(670, 400, 1000, 15);
+        requirements11.setBounds(670, 420, 1000, 15);
+        requirements2.setBounds(670, 440, 1000, 15);
+        requirements3.setBounds(670, 460, 1000, 15);
+        requirements4.setBounds(670, 480, 1000, 15);
+        requirements5.setBounds(670, 500, 1000, 15);
+        requirements6.setBounds(670, 520, 1000, 15);
+        requirements7.setBounds(670, 540, 1000, 15);
+        requirements8.setBounds(670, 560, 1000, 15);
+        requirements12.setBounds(670, 600, 1000, 15);
+        requirements9.setBounds(670, 580, 1000, 15);
+        requirements10.setBounds(670, 620, 1000, 15);
+        requirements13.setBounds(670, 640, 1000, 15);
+        puzzle.setBounds(15, 300, 637, 669);
         titleLabel.setBounds(540, 100, 1000, 50);
         yourPassword.setBounds(0, 50, 500, 15);
 
  // Hello
         // Update
         // Add + Action
-        mainFrame.setBackground(Color.PINK);
+        mainFrame.setBackground(Color.yellow);
         mainFrame.add(enterButton);
         mainFrame.add(initialPassword);
         mainFrame.add(titleLabel);
@@ -181,7 +183,8 @@ public class AWT {
         mainFrame.add(yourPassword);
         mainFrame.setSize(1920, 1080);
         mainFrame.setVisible(true);
-        victoriousFrame.setSize(500, 500);
+        victoriousFrame.add(daPrizee);
+        victoriousFrame.setSize(800, 800);
         victoriousFrame.setVisible(false);
         victoriousFrame.add(yourPassword);
         closingWindow();

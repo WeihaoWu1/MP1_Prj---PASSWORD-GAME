@@ -45,6 +45,16 @@ public class Game {
         System.out.println("Game is overloaded");
     }
 
+    public String Chess(int chessN){
+
+        return Chess[chessN];
+    }
+
+    public boolean checkChess(int chessN){
+        if(password.contains(chessAnswers[chessN])) return true;
+        return false;
+    }
+
     public void updatePassword(String newPassword) {
         password = newPassword;
     }
