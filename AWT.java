@@ -51,12 +51,13 @@ public class AWT {
         Button enterButton = new Button("ENTER");
         enterButton.setFont(enterFont);
         TextField initialPassword = new TextField();
-        initialPassword.setBounds(690, 300, 500, 30);
+        initialPassword.setBounds(690, 300, 500, 50);
         Game firstAttempt = new Game(updatedText, 0);
         int randomNumber = firstAttempt.getRandomNumber();
         int randomPuzzle = (int) (Math.random() * (10));
         Label titleLabel = new Label(firstAttempt.getIntroduction());
         titleLabel.setFont(newFont);
+        updatedText.setFont(requirementsfont);
         requirements1.setFont(requirementsfont);
         requirements2.setFont(requirementsfont);
         requirements3.setFont(requirementsfont);
