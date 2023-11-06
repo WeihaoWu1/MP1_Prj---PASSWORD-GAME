@@ -168,7 +168,7 @@ public class AWT {
  // Hello
         // Update
         // Add + Action
-        mainFrame.setBackground(Color.yellow);
+        mainFrame.setBackground(Color.PINK);
         mainFrame.add(enterButton);
         mainFrame.add(initialPassword);
         mainFrame.add(titleLabel);
