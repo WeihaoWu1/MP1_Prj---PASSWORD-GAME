@@ -18,7 +18,10 @@ public class AWT {
     private Label requirements11 = new Label();
     private Label requirements12 = new Label();
     private Label requirements13 = new Label();
-    private ImageIcon chessPuzzle;
+    private Label startingRequirement = new Label("Please Enter an animal");
+    private ImageIcon chessPuzzle = null;
+    private ImageIcon qrCode = new ImageIcon("prizerr.png");
+    private JLabel daPrize;
     private JLabel puzzle = new JLabel();
     private Label yourPassword = new Label();
     private boolean met1;
@@ -40,7 +43,6 @@ public class AWT {
     public AWT() {
         Font myFont1 = new Font("Roboto", Font.ITALIC | Font.BOLD, 12);
         Font myFont2 = new Font("Monospaced", Font.BOLD, 12);
-        Font myFont3 = null;
         Font newFont = myFont1.deriveFont(50F);
         Font enterFont = myFont1.deriveFont(150F);
         Font requirementsfont = myFont2.deriveFont(20F);
@@ -68,6 +70,7 @@ public class AWT {
         requirements11.setFont(requirementsfont);
         requirements12.setFont(requirementsfont);
         requirements13.setFont(requirementsfont);
+        startingRequirement.setFont(newFont);
         System.out.println(firstAttempt);
         enterButton.addActionListener(new ActionListener() {
             @Override
@@ -112,12 +115,13 @@ public class AWT {
                                                                 met10 = firstAttempt.sumThirty();
                                                                 requirements10.setText("Must have a sum of 30 for all numbers: " + met10);
                                                                 if (met10) {
-                                                                    chessPuzzle = new ImageIcon(firstAttempt.chess());
+                                                                    chessPuzzle = new ImageIcon(firstAttempt.chess(randomPuzzle));
                                                                     puzzle.setIcon(chessPuzzle);
                                                                     met13 = firstAttempt.checkChess(randomPuzzle);
                                                                     requirements13.setText("Must Include the best Chess move in " +
                                                                             "Algebraic Chess Notation: " + met13);
                                                                     if (met13) {
+                                                                        daPrize = new JLabel(qrCode);
                                                                         yourPassword.setText(updatedText);
                                                                         yourPassword.setFont(myFont1);
                                                                         mainFrame.setVisible(false);
@@ -141,7 +145,9 @@ public class AWT {
     });
         // Setting Bounds
         enterButton.setBounds(565, 700, 800, 200);
+        startingRequirement.setBounds(550, 150, 1000, 50);
         yourPassword.setBounds(0, 50, 500, 15);
+        daPrize.setBounds(10, 200, 200, 200));
         requirements1.setBounds(670, 400, 1000, 15);
         requirements11.setBounds(670, 420, 1000, 15);
         requirements2.setBounds(670, 440, 1000, 15);
@@ -183,7 +189,7 @@ public class AWT {
         mainFrame.add(yourPassword);
         mainFrame.setSize(1920, 1080);
         mainFrame.setVisible(true);
-        victoriousFrame.add(daPrizee);
+        victoriousFrame.add(daPrize);
         victoriousFrame.setSize(800, 800);
         victoriousFrame.setVisible(false);
         victoriousFrame.add(yourPassword);
