@@ -45,7 +45,7 @@ public class Game {
         System.out.println("Game is overloaded");
     }
 
-    public String Chess(int chessN){
+    public String chess(int chessN){
 
         return Chess[chessN];
     }
