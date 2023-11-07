@@ -1,14 +1,13 @@
 //import java.security.KeyStore;
 import java.util.*;
 import java.util.List;
-import java.awt.image.BufferedImage.*;
 
 public class Game {
     private int chessNum;
     private String password;
     private Integer sums;
     private final String introduction = "Welcome to the Password Game!";
-    private int attempts;
+    private Integer attempts;
     private final String[] months = {"january", "february", "march", "april", "may", "june",
             "july", "august", "september", "october", "november", "december"};
     private final String[] specialCharacters = {",", "<", ".", ">", "/", "?", ";", ":", "'",
@@ -24,16 +23,17 @@ public class Game {
             "preston", "toshinori", "raymond", "weihao", "linbin", "sumya"};
 
     private final String[] numbers = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
-    private final String[] Chess = {"chess5.png", "chess6.png", "chess7.png", "chess8.png", "chess9.png", "chess10.png", "chess11.png", "chess12.png", "chess13.png"};
-    private final String[] chessAnswers = {"Ne2#", "Qg7#", "Ne8#", "Nf1#", "axb5#", "Rh8#", "Bxb5#", "Rc1#", "dxe6#"};
+    private final String[] Chess = {"chess1.png", "chess2.png", "chess3.png", "chess4.png", "chess5.png", "chess6.png", "chess7.png", "chess8.png", "chess9.png", "chess10.png"};
+    private final String[] chessAnswers = {"Nxc4#","Ne2#", "Qg7#", "Ne8#", "Nf1#", "axb5#", "Rh8#", "Bxb5#", "Rc1#", "dxe6#"};
+    private final String[] captcha ={"captcha1.png", "captcha2.png", "captcha3.png", "captcha4.png", "captcha5.png", "captcha6.png", "captcha7.png", "captcha8.png", "captcha9.png", "captcha10.png"};
+    private final String[] captchaAnswers ={"bdg84", "2x7bm","m67b3","y4n6m","7wyp4", "b28g8","2x7bm","3den6","rg8ecm","ecd4w"};
+    private final String[] countries ={"thailand.png","turkey.png","usa.png","england.png", "china.png,","japan.png","france.png","italy.png","india.png","northkorea.png"};
+    private final String[] countriesAnswers = {"thailand", "turkey", "unitedstates","england", "china","japan", "france","italy","india","northkorea"};
     private int randomNumber;
     List<String> numList = Arrays.asList(numbers);
 
 
     // GAME METHOD
-
-
-
 
     public Game(String pass, int attemptNumber) {
         this.password = pass;
@@ -82,11 +82,18 @@ public class Game {
     }
     public int getRandomNumber() {return randomNumber;}
 
+
     //MISCELLANEOUS METHODS
     public static double calculateScore(int attempts) {
         double percentage = .000001;
         int formula = (int) (percentage * Integer.MAX_VALUE * attempts + .5);
-        return Double.parseDouble((("Your Score is: " + (formula) + "and it took you " + attempts + "tries!")));
+        return String.valueOf(("Your Score is: " + (formula) + " and it took you " + attempts + " tries!"));
+    }
+
+    public static double calculateScore(double attempts) { //this is never actually used - Mr. Holmer plz give credit for this
+        double percentage = .000001;
+        double formula = (double) (percentage * Integer.MAX_VALUE * attempts + .5);
+        return Integer.parseInt((("Your Score is: " + (formula) + "and it took you " + attempts + "tries!")));
     }
 
     public void getScore(int numAttempts) {
@@ -169,7 +176,8 @@ public class Game {
     }
 
     public void randNumber() { // RANDOM REQUIREMENT
-        int rand1 = (int) (Math.random() * (9 - 69 + 69) + 1);
+        int rand1 = (int) (Math.random() * (9 - 69 + 69) + 2);
+        rand1--;
         randomNumber = rand1;
     }
     public boolean displayNum(int random){
