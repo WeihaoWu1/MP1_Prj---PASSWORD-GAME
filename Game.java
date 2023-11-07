@@ -27,7 +27,7 @@ public class Game {
     private final String[] chessAnswers = {"Nxc4#","Ne2#", "Qg7#", "Ne8#", "Nf1#", "axb5#", "Rh8#", "Bxb5#", "Rc1#", "dxe6#"};
     private final String[] captcha ={"captcha1.png", "captcha2.png", "captcha3.png", "captcha4.png", "captcha5.png", "captcha6.png", "captcha7.png", "captcha8.png", "captcha9.png", "captcha10.png"};
     private final String[] captchaAnswers ={"bdg84", "2x7bm","m67b3","y4n6m","7wyp4", "b28g8","2x7bm","3den6","rg8ecm","ecd4w"};
-    private final String[] countries ={"thailand.png","turkey.png","usa.png","england.png", "china.png,","japan.png","france.png","italy.png","india.png","northkorea.png"};
+    private final String[] countries ={"thailand.png","turkey.png","USA.png","england.png", "china.png,","japan.png","france.png","italy.png","india.png","northkorea.png"};
     private final String[] countriesAnswers = {"thailand", "turkey", "unitedstates","england", "china","japan", "france","italy","india","northkorea"};
     private int randomNumber;
     List<String> numList = Arrays.asList(numbers);
