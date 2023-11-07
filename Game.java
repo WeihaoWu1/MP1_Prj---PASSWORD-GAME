@@ -55,6 +55,29 @@ public class Game {
         return false;
     }
 
+    public String captcha(int captchaN){
+        return captcha[captchaN];
+    }
+
+    public boolean checkCaptcha(int captchaN){
+        if(password.contains(captchaAnswers[captchaN])) return true;
+        return false;
+    }
+
+    public boolean lengthPassword(){
+        if(password.contains(String.valueOf(password.length()))) return true;
+        return false;
+    }
+
+    public String countries(int countriesN){
+        return countries[countriesN];
+    }
+
+    public boolean checkCountries(int countriesN){
+        if(password.toLowerCase().contains(countriesAnswers[countriesN])) return true;
+        return false;
+    }
+
     public void updatePassword(String newPassword) {
         password = newPassword;
     }
@@ -84,7 +107,7 @@ public class Game {
 
 
     //MISCELLANEOUS METHODS
-    public static double calculateScore(int attempts) {
+    public static String calculateScore(int attempts) {
         double percentage = .000001;
         int formula = (int) (percentage * Integer.MAX_VALUE * attempts + .5);
         return String.valueOf(("Your Score is: " + (formula) + " and it took you " + attempts + " tries!"));
@@ -140,6 +163,7 @@ public class Game {
         }
         return false;
     }
+
 
     public boolean capitalLetter() { // CAPITAL LETTER REQUIREMENT
         for (int i = 0; i < upperCaseLetters.length; i++) {
@@ -221,7 +245,7 @@ public class Game {
         return false;
     }
 
-    public boolean sumThirty() {        //SUM OF THIRTY REQUIREMENT
+    public boolean sumFourty() {        //SUM OF FOURTY REQUIREMENT
         int sum = 0;
         for (int i = 0; i < password.length(); i++) {
             for (int n = 0; n < numbers.length; n++) {
@@ -234,7 +258,7 @@ public class Game {
                 }
             }
         }
-        if (sum == 30) {
+        if (sum == 40) {
             return true;
         } else {
             return false;
