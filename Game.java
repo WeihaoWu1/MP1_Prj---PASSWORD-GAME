@@ -5,9 +5,9 @@ import java.util.List;
 public class Game {
     private int chessNum;
     private String password;
-    private Integer sums;
+    private int sums;
     private final String introduction = "Welcome to the Password Game!";
-    private Integer attempts;
+    private int attempts;
     private final String[] months = {"january", "february", "march", "april", "may", "june",
             "july", "august", "september", "october", "november", "december"};
     private final String[] specialCharacters = {",", "<", ".", ">", "/", "?", ";", ":", "'",
@@ -107,13 +107,13 @@ public class Game {
 
 
     //MISCELLANEOUS METHODS
-    public static String calculateScore(int attempts) {
+    public static String calculateScore(int attempts, int charCount) {        // method with multiple parameters
         double percentage = .000001;
         int formula = (int) (percentage * Integer.MAX_VALUE * attempts + .5);
-        return String.valueOf(("Your Score is: " + (formula) + " and it took you " + attempts + " tries!"));
+        return String.valueOf(("Your Score is: " + (formula) + " and it took you " + attempts + " tries!" + "Your password contained " + charCount + " characters."));
     }
 
-    public static double calculateScore(double attempts) { //this is never actually used - Mr. Holmer plz give credit for this
+    public static double calculateScore(double attempts,) { //this is never actually used - Mr. Holmer plz give credit for this
         double percentage = .000001;
         double formula = (double) (percentage * Integer.MAX_VALUE * attempts + .5);
         return Integer.parseInt((("Your Score is: " + (formula) + "and it took you " + attempts + "tries!")));
