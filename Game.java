@@ -113,14 +113,14 @@ public class Game {
         return String.valueOf(("Your Score is: " + (formula) + " and it took you " + attempts + " tries!" + "Your password contained " + charCount + " characters."));
     }
 
-    public static double calculateScore(double attempts,) { //this is never actually used - Mr. Holmer plz give credit for this
+    public static double calculateScore(double attempts) { //this is never actually used - Mr. Holmer plz give credit for this
         double percentage = .000001;
         double formula = (double) (percentage * Integer.MAX_VALUE * attempts + .5);
         return Integer.parseInt((("Your Score is: " + (formula) + "and it took you " + attempts + "tries!")));
     }
 
-    public void getScore(int numAttempts) {
-        System.out.println(Game.calculateScore(numAttempts));
+    public void getScore(int numAttempts, int charCount) {
+        System.out.println(Game.calculateScore(numAttempts, charCount));
     }
 
 
