@@ -134,7 +134,7 @@ public class AWT {
                                                     requirements8.setText("Must include this random number " + "(" + randomNumber + "):" + met8);
                                                     if (met8) {
                                                         setValues();
-                                                        requirements12.setText("Must have a product that is more 50 for all numbers: " + met12);
+                                                        requirements12.setText("Must have a product that is more 50 for all digits: " + met12);
                                                         if (met12) {
                                                             setValues();
                                                             requirements9.setText("Must include a decimal value: " + met9);

@@ -19,6 +19,7 @@ public class Game {
             "preston", "toshinori", "raymond", "weihao", "linbin", "sumya"};
 
     private final String[] numbers = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
+    private final String[] integers = {"0","1", "2", "3", "4", "5", "6", "7", "8", "9"};
     private final String[] Chess = {"chess1.png", "chess2.png", "chess3.png", "chess4.png", "chess5.png", "chess6.png", "chess7.png", "chess8.png", "chess9.png", "chess10.png"};
     private final String[] chessAnswers = {"Nxc4#","Ne2#", "Qg7#", "Ne8#", "Nf1#", "axb5#", "Rh8#", "Bxb5#", "Rc1#", "dxe6#"};
     private final String[] captcha ={"captcha1.png", "captcha2.png", "captcha3.png", "captcha4.png", "captcha5.png", "captcha6.png", "captcha7.png", "captcha8.png", "captcha9.png", "captcha10.png"};
@@ -133,9 +134,9 @@ public class Game {
         return false;
     }
 
-    public boolean number() { // SPECIAL CHARACTER REQUIREMENT
-        for (int i = 0; i < numbers.length; i++) {
-            if (password.contains(numbers[i])) {
+    public boolean number() { // NON ZERO NUMBER REQUIREMENT
+        for (int i = 0; i < integers.length; i++) {
+            if (password.contains(integers[i])) {
                 return true;
             }
         }
