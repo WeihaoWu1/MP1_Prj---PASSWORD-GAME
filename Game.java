@@ -1,11 +1,7 @@
-//import java.security.KeyStore;
-import java.util.*;
-import java.util.List;
-
 public class Game {
     private int chessNum;
     private String password;
-    private int sums;
+    private Integer sums;
     private final String introduction = "Welcome to the Password Game!";
     private int attempts;
     private final String[] months = {"january", "february", "march", "april", "may", "june",
@@ -30,7 +26,7 @@ public class Game {
     private final String[] countries ={"thailand.png","turkey.png","USA.png","england.png", "china.png,","japan.png","france.png","italy.png","india.png","northkorea.png"};
     private final String[] countriesAnswers = {"thailand", "turkey", "unitedstates","england", "china","japan", "france","italy","india","northkorea"};
     private int randomNumber;
-    List<String> numList = Arrays.asList(numbers);
+//    List<String> numList = Arrays.asList(numbers);
 
 
     // GAME METHOD

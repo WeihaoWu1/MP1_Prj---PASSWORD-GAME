@@ -51,6 +51,12 @@ public class AWT {
     private boolean met15;
     private boolean met16;
     private String updatedText = "";
+    private Game firstAttempt;
+    private int randomNumber;
+    private int randomSelection1;
+    private int randomSelection2;
+    private int randomSelection3;
+
 
 
     public AWT() {
@@ -63,11 +69,11 @@ public class AWT {
         enterButton.setFont(enterFont);
         TextField initialPassword = new TextField();
         initialPassword.setBounds(650, 300, 500, 50);
-        Game firstAttempt = new Game(updatedText, attempts);
-        int randomNumber = firstAttempt.getRandomNumber();
-        int randomSelection1 = (int) (Math.random() * (10));
-        int randomSelection2 = (int) (Math.random() * (10));
-        int randomSelection3 = (int) (Math.random() * (10));
+        firstAttempt = new Game(updatedText, attempts);
+        randomNumber = firstAttempt.getRandomNumber();
+        randomSelection1 = (int) (Math.random() * (10)); // CHESS RANDOM SELECTION
+        randomSelection2 = (int) (Math.random() * (10)); // CAPTCHA RANDOM SELECTION
+        randomSelection3 = (int) (Math.random() * (10)); // COUNTRIES RANDOM SELECTION
         Label titleLabel = new Label(firstAttempt.getIntroduction());
         titleLabel.setFont(newFont);
         initialPassword.setFont(requirementsfont);
@@ -100,59 +106,59 @@ public class AWT {
                     firstAttempt.updatePassword(updatedText);
                     attempts++;
                     System.out.println(firstAttempt.getPassword());
-                    met1 = firstAttempt.adzrequirement();
+                    setValues();
                     requirements1.setText("Must Include the Letters a,d,z: " + met1);
                     if (met1) {
-                        met11 = firstAttempt.number();
+                        setValues();
                         requirements11.setText("Must include a number: " + met11);
                         if (met11) {
-                            met2 = firstAttempt.specialCharacter();
+                            setValues();
                             requirements2.setText("Must Include a Special Character: " + met2);
                             if (met2) {
-                                met3 = firstAttempt.classmateName();
-                                requirements3.setText("Must Include a Classmate's Name: " + met3);
+                                setValues();
+                                requirements3.setText("Must Include a Classmate's First Name: " + met3);
                                 if (met3) {
-                                    met4 = firstAttempt.capitalLetter();
+                                    setValues();
                                     requirements4.setText("Must Include a Capital Letter: " + met4);
                                     if (met4) {
-                                        met5 = firstAttempt.season();
+                                        setValues();
                                         requirements5.setText("Must Include a Season: " + met5);
                                         if (met5) {
-                                            met6 = firstAttempt.month();
+                                            setValues();
                                             requirements6.setText("Must Include a month:" + met6);
                                             if (met6) {
-                                                met7 = firstAttempt.romanNumerals();
+                                                setValues();
                                                 requirements7.setText("Must include the Roman Numerals of 25 at the end: " + met7);
                                                 if (met7) {
-                                                    met8 = firstAttempt.displayNum(randomNumber);
+                                                    setValues();
                                                     requirements8.setText("Must include this random number " + "(" + randomNumber + "):" + met8);
                                                     if (met8) {
-                                                        met12 = firstAttempt.productFifty();
+                                                        setValues();
                                                         requirements12.setText("Must have a product that is more 50 for all numbers: " + met12);
                                                         if (met12) {
-                                                            met9 = firstAttempt.decimal();
+                                                            setValues();
                                                             requirements9.setText("Must include a decimal value: " + met9);
                                                             if (met9) {
-                                                                met10 = firstAttempt.sumFourty();
-                                                                requirements10.setText("Must have a sum of 40 for all numbers: " + met10);
+                                                                setValues();
+                                                                requirements10.setText("Must have a sum of 40 for all digits: " + met10);
                                                                 if (met10) {
                                                                     chessPuzzle = new ImageIcon(firstAttempt.chess(randomSelection1));
                                                                     puzzle.setIcon(chessPuzzle);
-                                                                    met13 = firstAttempt.checkChess(randomSelection1);
+                                                                    setValues();
                                                                     requirements13.setText("Must Include the best Chess move in " +
                                                                             "Algebraic Chess Notation: " + met13);
                                                                     if (met13) {
                                                                         captchaPuzzle = new ImageIcon(firstAttempt.captcha(randomSelection2));
                                                                         displayCaptcha.setIcon(captchaPuzzle);
-                                                                        met14 = firstAttempt.checkCaptcha(randomSelection2);
+                                                                        setValues();
                                                                         requirements14.setText("Must Include the words in the captcha: " + met14);
                                                                         if (met14) {
-                                                                            met15 = firstAttempt.lengthPassword();
+                                                                            setValues();
                                                                             requirements15.setText("Must include the length of your password: " + met15);
                                                                             if (met15) {
                                                                                 country = new ImageIcon(firstAttempt.countries((randomSelection3)));
                                                                                 displayCountry.setIcon(country);
-                                                                                met16 = firstAttempt.checkCountries(randomSelection3);
+                                                                                setValues();
                                                                                 requirements16.setText("Must include the name of the country " +
                                                                                         "in the image provided(no spaces): " + met16);
                                                                                 if (met16) {
@@ -246,6 +252,24 @@ public class AWT {
         victoriousFrame.setVisible(false);
         victoriousFrame.add(yourPassword);
         closingWindow();
+    }
+    public void setValues(){
+        met1 = firstAttempt.adzrequirement();
+        met11 = firstAttempt.number();
+        met2 = firstAttempt.specialCharacter();
+        met3 = firstAttempt.classmateName();
+        met4 = firstAttempt.capitalLetter();
+        met5 = firstAttempt.season();
+        met6 = firstAttempt.month();
+        met7 = firstAttempt.romanNumerals();
+        met8 = firstAttempt.displayNum(randomNumber);
+        met12 = firstAttempt.productFifty();
+        met9 = firstAttempt.decimal();
+        met10 = firstAttempt.sumFourty();
+        met13 = firstAttempt.checkChess(randomSelection1);
+        met14 = firstAttempt.checkCaptcha(randomSelection2);
+        met15 = firstAttempt.lengthPassword();
+        met16 = firstAttempt.checkCountries(randomSelection3);
     }
 
     // Window Closing DNC
