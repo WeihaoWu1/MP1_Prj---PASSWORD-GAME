@@ -157,7 +157,7 @@ public class Game {
 
     public boolean classmateName() { // INCLUDES CLASSMATES NAME REQUIREMENT
         for (int i = 0; i < ClassmateName.length; i++) {
-            if (password.contains(ClassmateName[i])) {
+            if (password.toLowerCase().contains(ClassmateName[i])) {
                 return true;
             }
         }
@@ -176,7 +176,7 @@ public class Game {
 
     public boolean season() { // SEASON REQUIREMENT
         for (int i = 0; i < seasons.length; i++) {
-            if (password.contains(seasons[i])) {
+            if (password.toLowerCase().contains(seasons[i])) {
                 return true;
             }
         }
@@ -185,7 +185,7 @@ public class Game {
 
     public boolean month() { // MONTH REQUIREMENT
         for (int i = 0; i < months.length; i++) {
-            if (password.contains(months[i])) {
+            if (password.toLowerCase().contains(months[i])) {
                 return true;
             }
         }

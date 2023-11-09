@@ -156,7 +156,7 @@ public class AWT {
                                                                                 requirements16.setText("Must include the name of the country " +
                                                                                         "in the image provided(no spaces): " + met16);
                                                                                 if (met16) {
-                                                                                    firstAttempt.getScore(attempts);
+                                                                                    firstAttempt.getScore(attempts, updatedText.length());
                                                                                     yourPassword.setText(updatedText);
                                                                                     yourPassword.setFont(requirementsfont);
                                                                                     mainFrame.setVisible(false);
@@ -212,7 +212,7 @@ public class AWT {
 
         // Update
         // Add + Action
-        mainFrame.setBackground(Color.PINK);
+        mainFrame.setBackground(Color.CYAN);
         mainFrame.add(characterCount);
         mainFrame.add(startingRequirement);
         mainFrame.add(enterButton);
