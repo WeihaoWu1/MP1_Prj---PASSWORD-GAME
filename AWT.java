@@ -3,6 +3,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class AWT {
+    // makes the application
     private final Frame mainFrame = new Frame("The Password Game");
     private final Frame victoriousFrame = new Frame("The Password Game");
     private final Label winningLabel = new Label("Congrats on beating this game! Scan the code for your Prize!");
