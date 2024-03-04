@@ -1,4 +1,5 @@
 public class Game {
+    //Game logic
     private int chessNum;
     private String password;
     private Integer sums;
